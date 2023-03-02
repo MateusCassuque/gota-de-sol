@@ -1,0 +1,49 @@
+#poupe{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    background-image: url("/img/pngs/81107870-만화-로봇이-가리키고있다-.webp");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: left;
+}
+
+#poupe .legenda{
+    width: 60%;
+    margin-top: 50px;
+    text-transform: capitalize;
+}
+
+#poupe .legenda .btn-primary{
+    text-transform: uppercase;
+    /* color: white;
+    background-color: chocolate;
+    border-color: coral; */
+}
+
+#poupe .legenda .btn-primary:hover{
+    /* background-color: white;
+    border-color: chocolate;
+    color: chocolate;
+    text-shadow: 1px 1px 20px rgba(210, 105, 30, 0.309); */
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
+
+
+@media(min-width: 768px){
+    #poupe{
+        justify-content: flex-start;
+        align-items: center;
+        background-size: contain;
+        
+        /* background-color: rgb(189, 80, 80); */
+
+        width: 80%;
+
+        margin: 50px auto;
+    }
+}

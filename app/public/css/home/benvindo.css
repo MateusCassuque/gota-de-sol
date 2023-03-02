@@ -1,0 +1,190 @@
+/* formatando div  */
+
+#benvindo{
+    margin-top: 30px;
+}
+
+#benvindo #imgDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-shadow: 1px 1px 1px black;
+    text-transform: uppercase;
+
+    height: 180px;
+    background-image: url("/img/pngs/benvidoslid.png");
+
+    /* background-color: rgb(27, 26, 26); */
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+}
+
+/* h1 e a sigla */
+#titulo{
+    position: relative;
+    left: -25px;
+    text-align: center;
+    margin-top: 25px;
+}
+#titulo h1{
+    color: chocolate;
+    text-shadow: 0px 0px 2px rgb(141, 62, 6);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#titulo #sigla{
+    font-size: 20px;
+    color: rgb(124, 204, 238);
+    /* background-color: rgba(33, 31, 31, 0.043); */
+}
+
+
+#benvindo p{
+    text-align: justify;
+    text-indent: 25px;
+    color: black ;
+    text-shadow: 1px 1px 1px white;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+#benvindo .legenda1{
+    background-color: rgba(248, 109, 10, 0.164);
+    border-radius: 20% 100% 35% 10%;    
+    padding: 20px;
+    max-width: max-content;
+    margin: 10px auto;
+
+    
+}
+
+#benvindo #btn_agendar{
+    border-radius: 5%;
+    background-color: chocolate;
+    border-color: rgb(255, 107, 2);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    
+    width: 300px;
+} 
+
+#botao{
+    text-align: center;
+}
+
+#benvindo #btn_agendar:hover{
+    background-color: white;
+    border-color: rgb(255, 107, 2);
+    color: chocolate;
+
+    transform: scale(1.1);
+    transition: all .2s;
+} 
+
+#benvindo #lengenda_principal{
+    top: 10px;
+    position: relative;
+    margin: 0 auto;
+    padding: 4px;
+    
+    max-width: max-content;
+    width: 90%;
+}
+
+#benvindo .legenda2{
+    padding: 20px;
+    background-color: rgba(124, 204, 238, 0.113);
+    border-radius: 20% 100% 35% 10%;
+    max-width: max-content;
+    margin: 10px auto;
+}
+
+/* @media(width: 320px){
+    /* #titulo h1{
+        color: red;
+    } */
+
+    /* #benvindo #logoGotadesol{
+        left: 150px;
+        top: 20px;
+        width: 50px;
+    }
+    
+} */
+
+/* @media(width: 375px){
+    /* #titulo h1{
+        color: red;
+    } 
+
+    #benvindo #logoGotadesol{
+        left: 210px;
+        top: 20px;
+        width: 50px;
+    }
+    
+}
+
+@media(width: 425px){
+     #titulo h1{
+        color: red;
+    }
+
+    #benvindo #logoGotadesol{
+        left: 260px;
+        top: 20px;
+        width: 50px;
+    }
+    
+}
+
+@media(width: 768px){
+     #titulo h1{
+        color: red;
+    } 
+
+    #benvindo #logoGotadesol{
+        left: 603px;
+        top: 20px;
+        width: 50px;
+    }
+    
+} 
+
+*{
+    background-color: rgba(0, 0, 0, 0.807);
+} */
+
+@media(min-width: 768px){
+    #benvindo #imgDiv{
+        width: 50%;
+        margin: 0 auto;
+    
+        height: 250px;
+
+        /* background-color: rgb(27, 26, 26); */
+        background-position-x: 90%;
+    }
+
+    #benvindo #lengenda_principal{
+        top: 30px;
+        width: 60%;
+    }
+
+    #benvindo #lengenda_principal p{
+        font-size: larger;
+    } 
+    
+    #titulo h1{
+        font-size: 50px;
+    }
+    
+    #titulo #sigla{
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,51 @@
+#nav{
+    background-color: #16a;
+    text-align: center;
+}
+
+#nav a{
+    color: #FFF;
+    font-size: large;
+}
+
+#nav li a:hover{
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+
+    transition: all .6s;
+}
+
+#nav #navbarTogglerDemo03 li{
+    margin: auto 5px;
+}
+
+#logo{
+    width: 30px;
+    margin-left: 15px;
+    /* color: #000; */
+    /* background-color: rgba(0, 0, 0, 0.493); */
+}
+
+#separador{
+    padding: 20px;
+}
+
+#slidTitulo{
+    /*  */
+    position: relative;
+    box-shadow: 0px .3px 1px 0px rgba(13, 12, 12, 0.469);
+    width: 300px;
+    margin: 0 auto 80px auto;
+    top: 50px;
+}
+
+@media(min-width: 720px) {    
+    #nav #navbarTogglerDemo03 ul{
+        margin: 0 auto;
+    }
+
+    #slidTitulo{
+        min-width: 650px;
+    }
+}

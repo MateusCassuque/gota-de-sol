@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  font-family: cursive;
+}
+
+#main{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 60px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: inline-block;
+  width: 55%;
+  text-align: left;
+  margin-top: 25px;
+  border-radius: 15px;
+}
+
+#main h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#aside {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  width: 30%;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+@media(max-width: 720px){
+
+  #aside {
+    width: 85%;
+    margin: 10px auto 10px auto;
+  }
+
+  #aside h2 {
+    font-size: 16px;
+  }
+
+  #main {
+    background-color: rgba(255, 255, 255, 0.484);
+    padding: 20px;
+    width: 85%;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  #main h2 {
+    font-size: 20px;
+  }
+
+  #title {
+    font-size: 26px;
+    margin-top: 70px;
+  }
+  #title span {
+    font-size: 42px;
+  }  
+
+}
+
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+aside h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: left;
+  margin-top: 20px;
+}
+
+label, input[type="submit"] {
+  font-size: 18px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 2px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+  padding: 10px;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+background-color: #4CAF50;
+border: 0;
+color: white;
+cursor: pointer;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 10px;
+
+animation: buttonFadeIn 1s ease-in-out;
+}
+
+@keyframes buttonFadeIn {
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+input[type="submit"]:hover {
+background-color: #3e8e41;
+transform: translateY(-2px);
+box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"] {
+background-color: #4CAF50;
+border: 0;
+color: white;
+cursor: pointer;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 10px;
+transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+background-color: #3e8e41;
+transform: translateY(-2px);
+box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]:active {
+transform: translateY(2px);
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  font-family:sans-serif;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #333;
+  letter-spacing: 4px;
+  color: #4CAF50;
+  margin-top: 70px;
+}
+.title span {
+        display: block;
+        font-size: 72px;
+        color: #f44336;
+ }
+
+.title:before, .title:after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 30%;
+  vertical-align: middle;
+  background-color: #4CAF50;
+  position: relative;
+  top: -0.5em;
+}
+
+.title:before {
+  left: 0;
+}
+
+.title:after {
+  right: 0;
+}

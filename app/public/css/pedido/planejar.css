@@ -1,0 +1,30 @@
+#card-form{
+    border: none;
+    margin-top: 300px;
+}
+
+#card-form .obrigatorio,
+#aviso{
+    color: red;
+    text-align: end;
+    margin: 10px;
+}
+
+#card-form p{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#conteudo_planejar{
+    margin-top: 50px;
+}
+
+#v_aviso{
+    text-align: center;
+}
+
+@media(min-width: 720px){
+    #card-form p{
+        font-size: 16px;
+    }
+}

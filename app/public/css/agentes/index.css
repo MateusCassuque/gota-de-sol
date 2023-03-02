@@ -1,0 +1,60 @@
+/* robo */
+
+#interface_agentes{
+    background-image: url("/img/pngs/robo.png");
+    background-repeat: no-repeat;
+    background-size: 180px;
+    background-position-x: right;
+    background-position-y: center;
+    height: 250px;
+
+    border: none;    
+    background-color: rgba(248, 109, 10, 0.164);
+    border-radius: 100% 35% 10% 20%; 
+}
+
+#conteudo{
+    margin: 10px;
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#conteudo h1{
+    color: rgb(124, 204, 238);
+    text-shadow: 0px 0px 2px rgb(18, 91, 122);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#conteudo p{
+    text-align: justify;
+    text-indent: 25px;
+
+    text-shadow: 1px 1px 1px white;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+#interface_agentes .card .foto_agente{
+    border-radius: 100%;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#interface_agentes .agente_card{
+    border: none;
+}
+
+#interface_agentes .card .card-title,
+#interface_agentes .card .card-subtitle{
+    text-align: center;
+}
+
+#descricao{
+    border-radius: 10% 100% 15% 20%;
+    background-color: rgba(124, 204, 238, 0.103);
+    padding: 25px;
+}
