@@ -1,0 +1,87 @@
+
+#servicos_principal{
+    /* background-color: rgba(224, 224, 224, 0.562); */
+    background-image: url("/img/pngs/BackgroundEraser_20230318_054801032.png");
+    background-repeat: no-repeat;
+    background-size: 700px;
+    background-position-x: right;
+    background-position-y: -80px;
+
+    height: max-content;
+    padding: 20px;
+
+    margin: 100px auto;
+}
+
+#servicos_principal #servicos{
+    margin-top: 90px;
+}
+
+#oferecemos{
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 5px #b5b5b5;
+    color: rgb(5, 5, 5);
+
+    margin-top: 50px;
+    margin-left: 200px;
+
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#oferecemos:hover{
+    text-decoration: underline;
+}
+
+#servicos_principal #servicos ul{
+    /* position: relative; */
+    left: 40px;
+    list-style: none;
+}
+
+#servicos_principal #servicos ul li ul li{
+    /* position: relative; */
+    left: 10px;
+    margin-left: 25px;
+    margin-top: 3px;
+    width: 90%;
+
+    text-transform: uppercase;
+}
+
+#servicos_principal #servicos ul li ul li:hover{
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+    background-color: rgba(1, 141, 255, 0.082);
+    border: 1px solid rgba(17, 101, 170, 0.24);
+}
+
+#servicos_principal #servicos ul h3{
+    text-align: center;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+    background-color: rgba(1, 141, 255, 0.082);
+    border: 1px solid rgba(17, 101, 170, 0.24);
+}
+@media(min-width: 720px){
+    body{
+        width: 940px;
+        margin: 0 auto;
+    }
+    #servicos_principal{
+        background-size: contain;
+        width: 65%;
+        height: min-content;
+        padding: 19px;
+    }
+    #servicos_principal #servicos{
+        margin-top: 10px;
+    }
+    #oferecemos{
+        margin-left: 170px;
+        margin-top: 160px;
+        font-size: 20px;
+    }
+}

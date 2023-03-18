@@ -24,18 +24,21 @@ router.post('/', async (req, res) => {
     try{
         const data_res = await api.post('auth/authenticate', req.body).then(res => {
             setBearerToken(res.data.token)
+            
+            // const token = data_res.token
+            // localStorage.setItem('token', token)
             return res.data
         }).catch(err => {
             return err.response
         })  
-
+        
         const test = Boolean(data_res.status)
         
         if(test){
             const message = data_res.data.error
             return res.status(data_res.status).render('pages/auth', {message})
         } 
-
+        
         // req.session.userAdmin = userAdmin
         return res.status(200).redirect('/auth/dashboard')  
     }catch(err){

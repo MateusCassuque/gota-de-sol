@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 
+const { api } = require('../../config/axiosConfig')
 const router = express.Router()
 
 const jsonCRUD = require('../../config/jsonCRUD')
@@ -11,6 +12,32 @@ const sf = {
     pathP: path.resolve(__dirname, '..', '..', 'config', 'jsons', 'processes.json' ),
     encoding: 'utf-8'
 }
+
+
+router.post('/', async (req, res) => {
+    try{
+      const servico = {...req.body}
+      const valor = servico.preco * 1
+      servico.preco = valor
+        
+      //Transformando as strings de microServicos e de requisitos rescebidas do req.body em array de strings
+      const reqArray = servico.requisitos.split(',')
+      servico.requisitos = reqArray
+      
+      const servArray = servico.microServicos.split(',')
+      servico.microServicos = servArray
+  
+      const newServico = await api.post('service', servico).then(res => {
+        return res.data 
+      })
+  
+      res.status(200).send(newServico)
+  
+    }catch(error){
+      res.status(400).send({error: 'Error to create service: ' + error})
+    }
+})
+  
 
 router.get('/show/:serviceId', async (req, res) => {
     try{

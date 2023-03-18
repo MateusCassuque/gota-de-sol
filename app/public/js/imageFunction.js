@@ -25,20 +25,22 @@ imgInput.addEventListener('change', function(e) {
 })
 
 
-async function salvarFoto(filePhoto){
+async function salvarFoto(filePhoto, id){
     try {
       let formDataImage = new FormData()
 
       formDataImage.append('file', filePhoto)
 
-    //   const perfil = await api.post('/userImg/', 
-    //     formDataImage, {
-    //         headers:{
-    //             'Content-Type': 'multipart/form-data'
-    //         }
-    //     }).then(res =>{}).catch(err => {
-    //       console.log('Erro: ' + err)
-    //     })
+      const serviceImg = await api.post('/img/' + id, 
+        formDataImage, {
+            headers:{
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then(res =>{ 
+            console.log(res)
+        }).catch(err => {
+          console.log('Erro: ' + err)
+        })
 
     } catch (error) {
       console.log(error)

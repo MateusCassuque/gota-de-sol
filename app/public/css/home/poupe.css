@@ -17,19 +17,20 @@
 }
 
 #poupe .legenda .btn-primary{
-    text-transform: uppercase;
-    /* color: white;
     background-color: chocolate;
-    border-color: coral; */
+    border-color: rgb(255, 107, 2);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    
 }
 
 #poupe .legenda .btn-primary:hover{
-    /* background-color: white;
-    border-color: chocolate;
+    background-color: white;
+    border-color: rgb(255, 107, 2);
     color: chocolate;
-    text-shadow: 1px 1px 20px rgba(210, 105, 30, 0.309); */
-    transform: scale(1.2);
-    transition: all .3s;
+
+    transform: scale(1.1);
+    transition: all .2s;
 }
 
 
@@ -37,7 +38,7 @@
 @media(min-width: 768px){
     #poupe{
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-end;
         background-size: contain;
         
         /* background-color: rgb(189, 80, 80); */
@@ -45,5 +46,14 @@
         width: 80%;
 
         margin: 50px auto;
+    }
+
+    #poupe .legenda{
+        width: 480px;
+        margin-top: 50px;
+        text-transform: capitalize;
+        text-align: center;
+        text-indent: 25px;
+        padding: 25px;
     }
 }

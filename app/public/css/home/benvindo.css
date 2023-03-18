@@ -7,20 +7,22 @@
 #benvindo #imgDiv{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     
     text-shadow: 1px 1px 1px black;
     text-transform: uppercase;
 
-    height: 180px;
-    background-image: url("/img/pngs/benvidoslid.png");
+    height: 230px;
+    background-image: url("/favicon.png");
 
     /* background-color: rgb(27, 26, 26); */
 
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: right;
+    background-size: 200px;
+    background-position-x: center;
+
+    margin-bottom: 100px;
 }
 
 /* h1 e a sigla */
@@ -37,10 +39,16 @@
     font-weight: 600;
 }
 
+#titulo2 h1{
+    color: chocolate;
+    text-shadow: 0px 0px 2px rgb(141, 62, 6);
+    font-size: 20px;
+    font-weight: 600;
+}
+
 #titulo #sigla{
     font-size: 20px;
-    color: rgb(124, 204, 238);
-    /* background-color: rgba(33, 31, 31, 0.043); */
+    color: rgb(55, 132, 249);
 }
 
 
@@ -104,71 +112,17 @@
     margin: 10px auto;
 }
 
-/* @media(width: 320px){
-    /* #titulo h1{
-        color: red;
-    } */
-
-    /* #benvindo #logoGotadesol{
-        left: 150px;
-        top: 20px;
-        width: 50px;
-    }
-    
-} */
-
-/* @media(width: 375px){
-    /* #titulo h1{
-        color: red;
-    } 
-
-    #benvindo #logoGotadesol{
-        left: 210px;
-        top: 20px;
-        width: 50px;
-    }
-    
-}
-
-@media(width: 425px){
-     #titulo h1{
-        color: red;
-    }
-
-    #benvindo #logoGotadesol{
-        left: 260px;
-        top: 20px;
-        width: 50px;
-    }
-    
-}
-
-@media(width: 768px){
-     #titulo h1{
-        color: red;
-    } 
-
-    #benvindo #logoGotadesol{
-        left: 603px;
-        top: 20px;
-        width: 50px;
-    }
-    
-} 
-
-*{
-    background-color: rgba(0, 0, 0, 0.807);
-} */
-
 @media(min-width: 768px){
     #benvindo #imgDiv{
-        width: 50%;
         margin: 0 auto;
+        margin-bottom: 100px;
     
-        height: 250px;
+        height: 330px;
 
         /* background-color: rgb(27, 26, 26); */
-        background-position-x: 90%;
+        background-position: center;
+        background-size: 250px;
+        
     }
 
     #benvindo #lengenda_principal{
@@ -180,8 +134,8 @@
         font-size: larger;
     } 
     
-    #titulo h1{
-        font-size: 50px;
+    #titulo2 h1{
+        font-size: 30px;
     }
     
     #titulo #sigla{
