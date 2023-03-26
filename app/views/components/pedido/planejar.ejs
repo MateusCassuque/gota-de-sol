@@ -16,12 +16,12 @@
       <p class="alert alert-info" role="alert" id="v_aviso">Preencha o formulário para enviar a inscrição</p>
       
       <div class="card-body">
-        <form action="#" method="post">
+        <form action="/pedido/planejar" method="post">
           <div class="row">
             
-              <div class="col-12 form-group mb-4">
-                <label for="name_completo">Nome Completo: <span class="obrigatorio">*</span></label>
-                <input type="text" name="name_completo" id="name_completo" placeholder="Nome Completo" required class="form-control">
+            <div class="col-12 form-group mb-4">
+                <label for="nome_completo">Nome Completo: <span class="obrigatorio">*</span></label>
+                <input type="text" name="nome_completo" id="nome_completo" placeholder="Nome Completo" required class="form-control">
               </div>
               
               <div id="contato" class="mb-4 row">
@@ -35,7 +35,7 @@
                   <input type="text" name="email" id="email" placeholder="Email: exemplo@gmail.com" class="form-control">
                 </div>
               </div>
-
+              
               <div id="pais_estado" class="row">
                 <div class="form-group opsao namePreco col-6">
                   <label for="pais_origem">(De) Pais: <span class="obrigatorio">*</span></label>
@@ -50,22 +50,15 @@
                     <option value="Turquia">Turquia</option>
                   </select>
                 </div>
-
+                
                 <div class="form-group opsao namePreco col-6">
                   <label for="cidade_origem">Cidade:</label>
-                  <select name="cidade_origem" id="cidade_origem" class="form-control">
-                    <option value="Bengo">Bengo</option>
-                    <option value="Benguela">Benguela</option>
-                    <option value="Cabinda">Cabinda</option>
-                    <option value="Huambo">Huambo</option>
-                    <option value="Huila (Lubango)">Huila (Lubango)</option>
-                    <option value="Luanda" selected>Luanda</option>
-                    <option value="Malanje">Malanje</option>
-                    <option value="Namibe">Namibe</option>
+                  <select name="cidade_origem" disabled id="cidade_origem" class="form-control">
+                    
                   </select>
                 </div>
               </div>
-
+              
               <div id="pais_estado" class="row mt-4">
                 <div class="form-group opsao namePreco col-6">
                   <label for="pais_destino">(Para) Pais: <span class="obrigatorio">*</span></label>
@@ -80,47 +73,40 @@
                     <option value="Turquia">Turquia</option>
                   </select>
                 </div>
-
+                
                 <div class="form-group opsao namePreco col-6">
                   <label for="cidade_destino">Cidade:</label>
-                  <select name="cidade_destino" id="cidade_destino" class="form-control">
-                    <option value="Bengo">Bengo</option>
-                    <option value="Benguela">Benguela</option>
-                    <option value="Cabinda">Cabinda</option>
-                    <option value="Huambo">Huambo</option>
-                    <option value="Huila (Lubango)">Huila (Lubango)</option>
-                    <option value="Luanda" selected>Luanda</option>
-                    <option value="Malanje">Malanje</option>
-                    <option value="Namibe">Namibe</option>
+                  <select name="cidade_destino" disabled id="cidade_destino" class="form-control">
+                    
                   </select>
                 </div>
               </div>
-
-
+              
+              
               <div class="mt-4 row" id="datas_viagem">
                 <div class="col-6 form-group">
-                  <label for="nascimento">Data de Ida:</label>
-                  <input type="date" name="nascimento" id="nascimento" class="form-control">
+                  <label for="data_de_ida">Data de Ida:</label>
+                  <input type="date" name="data_de_ida" id="data_de_ida" class="form-control">
                 </div>
                 
                 <div class="col-6 form-group">
-                  <label for="nascimento">Data de Volta:</label>
-                  <input type="date" name="passaportDate" id="nascimento" class="form-control">
+                  <label for="data_de_volta">Data de Volta:</label>
+                  <input type="date" name="data_de_volta" id="data_de_volta" class="form-control">
                 </div>
               </div>
-
+              
               <div class="form-group opsao namePreco mt-4">
-                <label for="nome">Motivo:</label>
-                <select name="nome" id="nome" class="form-control">
+                <label for="tipo_de_visto">Motivo:</label>
+                <select name="tipo_de_visto" id="tipo_de_visto" class="form-control">
                   <option value="Ajuda Humanitária">Ajuda Humanitária </option>
                   <option value="Formação">Formação</option>
                   <option value="Formação Profissional">Formação Profissional </option>
                   <option value="Saúde">Saúde </option>
                   <option value="Trabalho">Trabalho </option>
-                    <option value="Turismo" selected>Turismo </option>
-                    <option value="Visita Familiar">Visita Familiar </option>
+                  <option value="Turismo" selected>Turismo </option>
+                  <option value="Visita Familiar">Visita Familiar </option>
                 </select>
-            </div>
+              </div>
               
               <input type="submit" value="Enviar" class="my-4 btn btn-primary">
               
@@ -135,6 +121,115 @@
         </div>
       </div>
     </div>
+    
+    <script type="text/javascript">
+      $(function() {
+        const angola = '<option value="Bengo">Bengo</option><option value="Benguela">Benguela</option><option value="Cabinda">Cabinda</option><option value="Huambo">Huambo</option><option value="Huila (Lubango)">Huila (Lubango)</option><option value="Luanda" selected>Luanda</option><option value="Malanje">Malanje</option><option value="Namibe">Namibe</option></select>'
+
+        const portugal = '<option value="Lisboa">Lisboa</option><option value="Porto">Porto</option>'
+
+        const brazil = '<option value="São Paulo">São Paulo</option><option value="Rio de Janeiro">Rio de Janeiro</option>'
+
+        const espanha = '<option value="Madri">Madri</option>'
+
+        const america = '<option value="Nova York">Nova York</option><option value="Washington">Washington</option>'
+
+        const franca = '<option value="Paris">Paris</option>'
+        
+        $('#pais_origem').change(function(e) {
+          const pais_origem = $("#pais_origem").val()
+
+          if(pais_origem === 'Angola'){
+            const angola_tag = $('#cidade_origem')
+
+            angola_tag.html(angola)
+            angola_tag.removeAttr('disabled')
+
+          } else if(pais_origem === 'Portugal'){
+            const portugal_tag = $('#cidade_origem')
+
+            portugal_tag.html(portugal)
+            portugal_tag.removeAttr('disabled')
+
+          }else if(pais_origem === 'França'){
+            const franca_tag = $('#cidade_origem')
+            
+            franca_tag.html(franca)
+            franca_tag.removeAttr('disabled')
+
+          }else if(pais_origem === 'Brazil'){
+            const brazil_tag = $('#cidade_origem')
+            
+            brazil_tag.html(brazil)
+            brazil_tag.removeAttr('disabled')
+
+          }else if(pais_origem === 'Espanhã'){
+            const espanha_tag = $('#cidade_origem')
+            
+            espanha_tag.html(espanha)
+            espanha_tag.removeAttr('disabled')
+
+          }else if(pais_origem === 'Estados Unidos de América'){
+            const america_tag = $('#cidade_origem')
+            
+            america_tag.html(america)
+            america_tag.removeAttr('disabled')
+          }else{
+            const cidade_origem = $('#cidade_origem')
+            
+            cidade_origem.html(' ')
+            cidade_origem.attr('disabled', true)
+          }
+        })
+
+        $('#pais_destino').change(function(e) {
+          const pais_destino = $("#pais_destino").val()
+
+          if(pais_destino === 'Angola'){
+            const angola_tag = $('#cidade_destino')
+
+            angola_tag.html(angola)
+            angola_tag.removeAttr('disabled')
+
+          } else if(pais_destino === 'Portugal'){
+            const portugal_tag = $('#cidade_destino')
+
+            portugal_tag.html(portugal)
+            portugal_tag.removeAttr('disabled')
+
+          }else if(pais_destino === 'França'){
+            const franca_tag = $('#cidade_destino')
+            
+            franca_tag.html(franca)
+            franca_tag.removeAttr('disabled')
+
+          }else if(pais_destino === 'Brazil'){
+            const brazil_tag = $('#cidade_destino')
+            
+            brazil_tag.html(brazil)
+            brazil_tag.removeAttr('disabled')
+
+          }else if(pais_destino === 'Espanhã'){
+            const espanha_tag = $('#cidade_destino')
+            
+            espanha_tag.html(espanha)
+            espanha_tag.removeAttr('disabled')
+
+          }else if(pais_destino === 'Estados Unidos de América'){
+            const america_tag = $('#cidade_destino')
+            
+            america_tag.html(america)
+            america_tag.removeAttr('disabled')
+          }else{
+            const cidade_destino = $('#cidade_destino')
+            
+            cidade_destino.html(' ')
+            cidade_destino.attr('disabled', true)
+          }
+        })
+        
+      })
+    </script>
 
 </body>
   

@@ -29,6 +29,35 @@ router.get('/planejar', async (req,res) => {
   }
 })
 
+router.post('/', async (req,res) => {
+  try {
+    const corpo = req.body
+    console.log(corpo)
+    
+    res.status(200).render('layout/home', {
+      conteudo: '/process/form_pedido', 
+    })
+  } catch (error) {
+    res.status(400).send({ 
+      Error: 'Erro to access the home page'
+    }) 
+  }
+})
+
+router.post('/planejar', async (req,res) => {
+  try {
+    const corpo = req.body
+    console.log(corpo)
+    res.status(200).render('layout/home', {
+      conteudo: '/process/form_planejar', 
+    })
+  } catch (error) {
+    res.status(400).send({ 
+      Error: 'Erro to access the home page'
+    }) 
+  }
+})
+
 router.get('/agentes', async (req,res) => {
     try {
       res.status(200).render('layout/home', {

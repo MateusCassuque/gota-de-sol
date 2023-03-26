@@ -8,20 +8,20 @@
     <div class="card col-md-5 m-2 mx-auto" id="card-form">
 
       <div class="card-header">
-        <h5>Planejar Viagem</h5>
+        <h5>Enviar Pedido de Consultória</h5>
       </div>
       
       <span id="aviso"> * (Obrigatório) </span>
       
-      <p class="alert alert-info" role="alert" id="v_aviso">Preencha o formulário para enviar a inscrição</p>
+      <p class="alert alert-info" role="alert" id="v_aviso">Preencha o formulário para enviar Enviar Pedido de Consultória</p>
       
       <div class="card-body">
         <form action="#" method="post">
           <div class="row">
             
               <div class="col-12 form-group mb-4">
-                <label for="name_completo">Nome Completo: <span class="obrigatorio">*</span></label>
-                <input type="text" name="name_completo" id="name_completo" placeholder="Nome Completo" required class="form-control">
+                <label for="nome_completo">Nome Completo: <span class="obrigatorio">*</span></label>
+                <input type="text" name="nome_completo" id="nome_completo" placeholder="Nome Completo" required class="form-control">
               </div>
               
               <div id="contato" class="mb-4 row">
@@ -31,66 +31,48 @@
                   <input type="text" name="telefone" id="telefone" placeholder="telefone: +244 999 999 999" required class="form-control">
                 </div>
                 
-                <div class="form-group mt-4 col-md-6">
+                <div class="form-group mt-4 mt-md-0 col-md-6">
                   <input type="text" name="email" id="email" placeholder="Email: exemplo@gmail.com" class="form-control">
                 </div>
               </div>
 
-              <div id="pais_estado" class="row">
+
+              <div class="mt-4 row" id="datas_viagem">
+                <div class="col-12 form-group">
+                  <label for="datalhes">Detalhes do Pedido:</label>
+                  <textarea class="form-control" name="datalhes" id="datalhes" cols="30" rows="10"></textarea>
+                </div>
+              </div>
+
+              <div id="motivo" class="row mt-4">
                 <div class="form-group opsao namePreco col-6">
-                  <label for="nome">Pais: <span class="obrigatorio">*</span></label>
-                  <select name="nome" id="nome" class="form-control">
+                  <label for="motivo">Motivo:</label>
+                  <select name="motivo" id="motivo" class="form-control">
+                    <option value="Agendamento">Agendamento</option>
+                    <option value="Bilhete de Passagem">Bilhete de Passagem</option>
+                    <option value="Documentação">Documentação</option>
+                    <option value="Reserva de Hotal">Reserva de Hotal</option>
+                    <option value="Visto">Visto </option>
+                  </select>
+                </div>
+
+                <div class="form-group opsao namePreco col-6">
+                  <label for="pais">(Para) Pais:</label>
+                  <select name="pais" id="pais" class="form-control">
                     <option value="Angola">Angola</option>
                     <option value="Brazil">Brazil</option>
                     <option value="Dubai">Dubai</option>
                     <option value="Espanhã">Espanhã</option>
                     <option value="Estados Unidos de América">Estados Unidos de América</option>
                     <option value="França">França</option>
-                    <option value="Portugal">Portugal</option>
+                    <option value="Portugal" selected>Portugal</option>
                     <option value="Turquia">Turquia</option>
                   </select>
                 </div>
 
-                <div class="form-group opsao namePreco col-6">
-                  <label for="nome">Cidade:</label>
-                  <select name="nome" id="nome" class="form-control">
-                    <option value="Bengo">Bengo</option>
-                    <option value="Benguela">Benguela</option>
-                    <option value="Cabinda">Cabinda</option>
-                    <option value="Huambo">Huambo</option>
-                    <option value="Huila (Lubango)">Huila (Lubango)</option>
-                    <option value="Luanda" selected>Luanda</option>
-                    <option value="Malanje">Malanje</option>
-                    <option value="Namibe">Namibe</option>
-                  </select>
-                </div>
               </div>
 
-
-              <div class="mt-4 row" id="datas_viagem">
-                <div class="col-6 form-group">
-                  <label for="nascimento">Data de Ida:</label>
-                  <input type="date" name="nascimento" id="nascimento" class="form-control">
-                </div>
-                
-                <div class="col-6 form-group">
-                  <label for="nascimento">Data de Volta:</label>
-                  <input type="date" name="passaportDate" id="nascimento" class="form-control">
-                </div>
-              </div>
-
-              <div class="form-group opsao namePreco mt-4">
-                <label for="nome">Motivo:</label>
-                <select name="nome" id="nome" class="form-control">
-                  <option value="Ajuda Humanitária">Ajuda Humanitária </option>
-                  <option value="Formação">Formação</option>
-                  <option value="Formação Profissional">Formação Profissional </option>
-                  <option value="Saúde">Saúde </option>
-                  <option value="Trabalho">Trabalho </option>
-                    <option value="Turismo" selected>Turismo </option>
-                    <option value="Visita Familiar">Visita Familiar </option>
-                </select>
-            </div>
+              
               
               <input type="submit" value="Enviar" class="my-4 btn btn-primary">
               
