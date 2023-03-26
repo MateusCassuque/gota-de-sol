@@ -27,6 +27,11 @@ router.get('/', async (req,res) => {
     //   return err.response.data
     // })
 
+    const servicos = await jsonCRUD.JSONRead(dbc.path, dbc.encoding).then(res => {
+      return res
+    })
+    
+
     let subservicos = ''
     let posts = ''
 
@@ -42,7 +47,8 @@ router.get('/', async (req,res) => {
     res.status(200).render('layout/home', {
       conteudo: '/home/index',
       subservicos,
-      posts
+      posts,
+      servicos
     })
   } catch (error) {
     console.log(error)
@@ -81,23 +87,6 @@ router.get('/sobre', async (req, res) => {
     res.status(200).render('layout/home', {conteudo: '/home/sobre'})    
     
     
-  } catch (error) {
-    res.status(400).res.send({
-      Error: 'Erro to access the service page'
-    })
-  }
-})
-
-router.get('/services', async (req, res) => {
-  try {
-    const servicos = await jsonCRUD.JSONRead(dbc.path, dbc.encoding).then(res => {
-      return res
-    })
-    
-    res.status(200).render('layout/home', {
-      conteudo: '/home/servicos',
-      servicos
-    })    
   } catch (error) {
     res.status(400).res.send({
       Error: 'Erro to access the service page'

@@ -38,17 +38,17 @@ router.post('/:servicoId', async (req, res) => {
         
         console.log(client, servico)
 
-        try {
-            mailer.sendMail({
-                to: 'mateusAbril7@gmail.com',
-                from: 'mateusAbril2@gmail.com',
-                template: 'newProcess',
-                context: {servico, client}
-            })
+        // try {
+        //     mailer.sendMail({
+        //         to: 'mateusAbril7@gmail.com',
+        //         from: 'mateusAbril2@gmail.com',
+        //         template: 'newProcess',
+        //         context: {servico, client}
+        //     })
             
-        } catch (error) {
+        // } catch (error) {
             
-        } 
+        // } 
 
         res.status(200).render('layout/home', {
             conteudo: 'service/index',
@@ -111,7 +111,6 @@ router.get('/sub/show/:serviceId', async (req, res) => {
     }
 })
 
-
 router.get('/sub/delete/:processoId', async (req, res) => {
     try {
       const subprocessos = await jsonCRUD.JSONRead(sf.pathSP,sf.encoding).then(res => {
@@ -167,12 +166,7 @@ router.get('/sub/delete/:processoId', async (req, res) => {
       } catch (error) {
           res.status(400).send({Erro: error})
       }
-  })
-
-
-
-
-
+})
 
 router.get('/show/:serviceId', async (req, res) => {
     try{

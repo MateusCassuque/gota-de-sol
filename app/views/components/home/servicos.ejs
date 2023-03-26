@@ -6,12 +6,17 @@
 
 <body>
 
-  <h3 id="ofertaH3" class="m-4">Processos Disponíveis</h3>
-  <h5 id="ofertaH5" class="m-4">Consultória para pedido de Visto nas seguintes categórias:</h5>
+  <div id="slidBanner">
+    <p id="farst_P">Organizamos e Acompanhamos o teu processo desde o Agendamento a resposta do Consulado até o dezembarque de regreço.</p>
+
+      <p id="secund_P"> Uma boa organização do processo, não garante o visto mas, te coloca um passo na frente!</p>
+  </div>
+
+  <h3 id="ofertaH3" class="m-4">Vistos Disponíveis</h3>
 
   <div class="row col-11" id="servicos">
     <% servicos.forEach(servico => { %>
-    <div class="card" style="width: 33rem; margin: 15px;">
+    <div class="card">
       
       <% if(servico.imagem){ %>
         <img class="card-img-top img-fluid" src="/img/services/<%=servico.imagem%>" alt="<%=servico.name %>">
@@ -24,11 +29,7 @@
         <p class="text-muted"> (Paises: Portugal, França, Espanhã, EUA & Brazil) </p>
         
         <div class="card-text">
-          <p>
-          Acompanhamos o teu processo desde o Agendamento até a resposta do Consulado.
-          </p>
-
-          <p> Uma boa organização do processo, não garante o visto mas, te coloca um passo afrente! </p>
+          
 
           <strong class="showServico">Cuidamos de:</strong>
           <p class="text-muted">
@@ -46,12 +47,12 @@
         </div>
 
         <div class="card-actions">
-            <a href="./service/<%=servico.id%>" class="btn btn-primary">Ver Mais</a>
+            <a href="./service/<%=servico.id%>" class="btn btn-primary d-block">Ver Mais</a>
         </div>
       </div>
         
       <div class="card-footer">
-        <p>Estada inferior a 90 dias</p>
+        <p>Gota D' Sol</p>
       </div>
     </div>
     <% }) %>

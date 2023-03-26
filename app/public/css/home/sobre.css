@@ -1,0 +1,24 @@
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+p{
+    text-indent: 25px;
+    text-align: justify;
+}
+
+#logoGotadesol{
+    width: 150px;
+    margin: 35px auto auto auto;
+}
+
+#benvindo #subtitulo{
+    text-align: center;
+    color: blueviolet;
+    text-shadow: 0px 0px 1px rgb(0, 0, 0);
+    font-size: 12px;
+}
+
+#botao{
+    text-align: center;
+}

@@ -1,7 +1,3 @@
-*{
-    /* font-family: Verdana, Geneva, sans-serif; */
-}
-
 #carouselExampleIndicators .carousel-item{ 
     height: 45%;
     position: relative;
@@ -19,12 +15,6 @@
     margin: 0 auto;
     padding: 15px;
     text-transform: capitalize;
-}
-
-carouselExampleIndicators
-#servicos,
-#subServicos {
-    margin: 4px;
 }
 
 /*Formatação do tamanho da fonte para os telefones!*/
@@ -58,10 +48,71 @@ carouselExampleIndicators
         font-size: 100px;
 
     }
+
+    #slidBanner{
+        height: 70vh;
+        width: 75%;
+        text-transform: uppercase;
+    }
+    
+    #slidBanner #farst_P{
+        font-size: 25px;
+    }
+    
+    #slidBanner #secund_P{
+        font-size: 35px;
+    }
+}
+
+#slidBanner{
+    height: 50vh;
+    margin: 25px auto;
+    text-align: center;
+    text-transform: capitalize;
+
+    /* Alinhando todos os itens no centro da div */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Estilizando o fundo  */
+    background-image: url('/img/fundos/fundoBranco.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#slidBanner #farst_P{
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    text-shadow: 0px 0px 2px rgba(16, 16, 16, 0.58);
+    background-color: rgba(131, 131, 131, 0.52);
+}
+#slidBanner #secund_P{
+    font-size: 25px;
+    color: blueviolet;
+    text-shadow: 0px 0px 2px rgba(213, 213, 213, 0.693);
+    background-color: rgba(182, 182, 182, 0.52);
+}
+
+#servicos{
+    width: 87%;
+    margin: 25px auto;
 }
 
 #servicos .card{
     border: none;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.585);
+    width: 25rem; 
+    margin: 6px;
+    border-radius: 5%;
+}
+
+#servicos .card-img-top{
+    margin: 15px auto;
+    border-radius: 10%;
 }
 
 #servicos .card .card-body{
@@ -80,6 +131,7 @@ carouselExampleIndicators
     padding: 10px;
     margin: 0;
     text-align: center;
-    border: solid 1px #05c5ffb2;
-    background-color: #05ade03f;
+    border: solid 1px rgba(137, 43, 226, 0.739);
+    background-color: rgba(126, 7, 238, 0.481);
+    color: white;
 }

@@ -1,144 +1,63 @@
 /* formatando div  */
 
-#benvindo{
-    margin-top: 30px;
-}
-
-#benvindo #imgDiv{
+#benvindo {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     
-    text-shadow: 1px 1px 1px black;
     text-transform: uppercase;
 
-    height: 230px;
-    background-image: url("/favicon.png");
-
-    /* background-color: rgb(27, 26, 26); */
-
+    height: 345px;
+    
+    
+    background-image: url("/img/fundos/fundoAmarelo.jpg");
     background-repeat: no-repeat;
-    background-size: 200px;
-    background-position-x: center;
-
-    margin-bottom: 100px;
+    background-size: contain;
+    margin-bottom: 25px;
 }
 
 /* h1 e a sigla */
-#titulo{
-    position: relative;
-    left: -25px;
+#benvindo #titulo{
+    color: rgb(0, 162, 255);
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    font-size: 3.5rem;
     text-align: center;
-    margin-top: 25px;
-}
-#titulo h1{
-    color: chocolate;
-    text-shadow: 0px 0px 2px rgb(141, 62, 6);
-    font-size: 30px;
-    font-weight: 600;
+
 }
 
-#titulo2 h1{
-    color: chocolate;
-    text-shadow: 0px 0px 2px rgb(141, 62, 6);
-    font-size: 20px;
-    font-weight: 600;
+#benvindo #subtitulo{
+    color: rgb(50, 49, 49);
+    text-shadow: 0px 0px 5px white;
+    font-size: 22px;
 }
 
-#titulo #sigla{
-    font-size: 20px;
-    color: rgb(55, 132, 249);
+#benvindo #cta{
+    background-color: blueviolet;
+    border-color: blueviolet;
+    margin-top: 50px;
 }
 
-
-#benvindo p{
-    text-align: justify;
-    text-indent: 25px;
-    color: black ;
-    text-shadow: 1px 1px 1px white;
-    font-weight: 400;
-    text-transform: capitalize;
-}
-
-#benvindo .legenda1{
-    background-color: rgba(248, 109, 10, 0.164);
-    border-radius: 20% 100% 35% 10%;    
-    padding: 20px;
-    max-width: max-content;
-    margin: 10px auto;
-
-    
-}
-
-#benvindo #btn_agendar{
-    border-radius: 5%;
-    background-color: chocolate;
-    border-color: rgb(255, 107, 2);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    
-    width: 300px;
-} 
-
-#botao{
-    text-align: center;
-}
-
-#benvindo #btn_agendar:hover{
-    background-color: white;
-    border-color: rgb(255, 107, 2);
-    color: chocolate;
-
-    transform: scale(1.1);
-    transition: all .2s;
-} 
-
-#benvindo #lengenda_principal{
-    top: 10px;
-    position: relative;
-    margin: 0 auto;
-    padding: 4px;
-    
-    max-width: max-content;
-    width: 90%;
-}
-
-#benvindo .legenda2{
-    padding: 20px;
-    background-color: rgba(124, 204, 238, 0.113);
-    border-radius: 20% 100% 35% 10%;
-    max-width: max-content;
-    margin: 10px auto;
+#benvindo #cta:hover{
+    color: blueviolet;
+    background-color: rgb(255, 255, 255);
+    border-color: blueviolet;
+    transition: all .5s;
 }
 
 @media(min-width: 768px){
-    #benvindo #imgDiv{
-        margin: 0 auto;
-        margin-bottom: 100px;
-    
-        height: 330px;
+    #benvindo{
+        height: 90vh;
+        background-size: 100% 100%;
+    }
 
-        /* background-color: rgb(27, 26, 26); */
-        background-position: center;
-        background-size: 250px;
+    /* h1 e a sigla */
+    #benvindo #titulo{
+        font-size: 10rem;
         
     }
-
-    #benvindo #lengenda_principal{
-        top: 30px;
-        width: 60%;
-    }
-
-    #benvindo #lengenda_principal p{
-        font-size: larger;
-    } 
     
-    #titulo2 h1{
-        font-size: 30px;
-    }
-    
-    #titulo #sigla{
-        font-size: 30px;
+    #benvindo #subtitulo{
+        font-size: 35px;
     }
 }
