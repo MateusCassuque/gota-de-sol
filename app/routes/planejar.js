@@ -3,15 +3,15 @@ const router = express.Router();
 
 const { api, setBearerToken } = require('../../config/axiosConfig')
 
-const multerConfig = require('../../config/multerConfig')
+const multerConfig = require('../../config/multerConfig');
 
-router.get('/', async (req,res) => {
+router.get('/planejar', async (req,res) => {
   try {
     const novoPedido = ''
     let message = ''
 
     res.status(200).render('layout/home', {
-      conteudo: '/process/form_pedido',
+      conteudo: '/process/form_planejar',
       novoPedido,
       message
     })
@@ -22,13 +22,13 @@ router.get('/', async (req,res) => {
   }
 })
 
-router.post('/', async (req,res) => {
+router.post('/planejar', async (req,res) => {
   try {
     const {nome_completo, telefone} = req.body
     let message = ''
     let novoPedido = ''
 
-    const pedidos = await api.get('pedido')
+    const pedidos = await api.get('planejar')
       .then( res => {
         return res.data
       })
@@ -42,7 +42,7 @@ router.post('/', async (req,res) => {
     if(pedido){
       message = 'Processo não enviado. ' + pedido.nome_completo + ', você já tem um registro no nosso banco de dados.'
       return res.status(401).render('layout/home', {
-        conteudo: '/process/form_pedido',
+        conteudo: '/process/form_planejar', 
         novoPedido,
         message
       })
@@ -50,7 +50,7 @@ router.post('/', async (req,res) => {
         
     pedido = req.body
     
-    novoPedido = await api.post('pedido', pedido)
+    novoPedido = await api.post('planejar', pedido)
     .then( res => {
       return res.data
     })
@@ -59,28 +59,16 @@ router.post('/', async (req,res) => {
     })
     
     res.status(200).render('layout/home', {
-      conteudo: '/process/form_pedido',
+      conteudo: '/process/form_planejar', 
       novoPedido,
       message
-
     })
+    
   } catch (error) {
     res.status(400).send({ 
       Error: 'Erro to access the home page'
     }) 
   }
-})
+}) 
 
-router.get('/agentes', async (req,res) => {
-    try {
-      res.status(200).render('layout/home', {
-        conteudo: 'agentes/index', 
-      })
-    } catch (error) {
-      res.status(400).send({ 
-        Error: 'Erro to access the home page'
-      }) 
-    }
-})
-
-module.exports = app => app.use('/pedido', router);
+module.exports = app => app.use('/pedido', router); 

@@ -3,6 +3,19 @@
     <link rel="stylesheet" href="/css/pedido/planejar.css">
 </head>
 <body>
+  
+  <% if(novoPedido){ %>
+    <p class="alert alert-success" role="alert" id="sucesso">
+      Processo enviado com sucesso! <br class="d-md-none">
+      <strong> <%=novoPedido.nome_completo%> </strong>
+      entraremos em contacto dentro de 12 horas.
+    </p>
+  <% } %>
+
+  <% if(message){ %>
+    <p class="alert alert-danger" role="alert" id="sucesso"><%=message%></p>
+  <% } %>
+
   <div id="conteudo_planejar">
     
     <div class="card col-md-5 m-2 mx-auto" id="card-form">
@@ -25,14 +38,14 @@
               </div>
               
               <div id="contato" class="mb-4 row">
-                <label for="name">Contacto: <span class="obrigatorio">*</span></label>
+                <label for="telefone">Contacto: <span class="obrigatorio">*</span></label>
                 
                 <div class="col-md-6 form-group">
-                  <input type="text" name="telefone" id="telefone" placeholder="telefone: +244 999 999 999" required class="form-control">
+                  <input type="tel" name="telefone" id="telefone" placeholder="telefone: +244 999 999 999" required class="form-control">
                 </div>
                 
                 <div class="form-group mt-4 mt-md-0 col-md-6">
-                  <input type="text" name="email" id="email" placeholder="Email: exemplo@gmail.com" class="form-control">
+                  <input type="email" name="email" id="email" placeholder="Email: exemplo@gmail.com" class="form-control">
                 </div>
               </div>
 
@@ -40,7 +53,7 @@
               <div class="mt-4 row" id="datas_viagem">
                 <div class="col-12 form-group">
                   <label for="datalhes">Detalhes do Pedido:</label>
-                  <textarea class="form-control" name="datalhes" id="datalhes" cols="30" rows="10"></textarea>
+                  <textarea class="form-control" name="datalhes" id="datalhes" cols="30" rows="10" required></textarea>
                 </div>
               </div>
 
@@ -57,8 +70,8 @@
                 </div>
 
                 <div class="form-group opsao namePreco col-6">
-                  <label for="pais">(Para) Pais:</label>
-                  <select name="pais" id="pais" class="form-control">
+                  <label for="para">Para:</label>
+                  <select name="para" id="para" class="form-control">
                     <option value="Angola">Angola</option>
                     <option value="Brazil">Brazil</option>
                     <option value="Dubai">Dubai</option>
@@ -70,9 +83,7 @@
                   </select>
                 </div>
 
-              </div>
-
-              
+              </div>             
               
               <input type="submit" value="Enviar" class="my-4 btn btn-primary">
               
@@ -81,7 +92,7 @@
         </div>
         
         <div class="card-footer">
-          <p class="text-muted">para mais informações conatcte: +244 949 143 902 | <br class="d-md-none">
+          <p class="text-muted">para mais informações contacte: +244 949 143 902 | <br class="d-md-none">
             <span class="text-success">Whatsapp: +244 952 494 542</span>
           </p>
         </div>

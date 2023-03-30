@@ -3,6 +3,19 @@
     <link rel="stylesheet" href="/css/pedido/planejar.css">
 </head>
 <body>
+
+  <% if(novoPedido){ %>
+    <p class="alert alert-success" role="alert" id="sucesso">
+      Processo enviado com sucesso! <br class="d-md-none">
+      <strong> <%=novoPedido.nome_completo%> </strong>
+      entraremos em contacto dentro de 12 horas.
+    </p>
+  <% } %>
+
+  <% if(message){ %>
+    <p class="alert alert-danger" role="alert" id="sucesso"><%=message%></p>
+  <% } %>
+  
   <div id="conteudo_planejar">
     
     <div class="card col-md-5 m-2 mx-auto" id="card-form">
@@ -13,7 +26,7 @@
       
       <span id="aviso"> * (Obrigatório) </span>
       
-      <p class="alert alert-info" role="alert" id="v_aviso">Preencha o formulário para enviar a inscrição</p>
+      <p class="alert alert-info" role="alert" id="v_aviso">Preencha o formulário para enviar uma nova inscrição</p>
       
       <div class="card-body">
         <form action="/pedido/planejar" method="post">
@@ -28,11 +41,11 @@
                 <label for="telefone">Contacto: <span class="obrigatorio">*</span></label>
                 
                 <div class="col-md-6 form-group">
-                  <input type="text" name="telefone" id="telefone" placeholder="telefone: +244 999 999 999" required class="form-control">
+                  <input type="tel" name="telefone" id="telefone" placeholder="telefone: +244 999 999 999" required class="form-control">
                 </div>
                 
                 <div class="form-group mt-4 mt-md-0 col-md-6">
-                  <input type="text" name="email" id="email" placeholder="Email: exemplo@gmail.com" class="form-control">
+                  <input type="email" name="email" id="email" placeholder="Email: exemplo@gmail.com" class="form-control">
                 </div>
               </div>
               
@@ -96,8 +109,8 @@
               </div>
               
               <div class="form-group opsao namePreco mt-4">
-                <label for="tipo_de_visto">Motivo:</label>
-                <select name="tipo_de_visto" id="tipo_de_visto" class="form-control">
+                <label for="motivo">Motivo:</label>
+                <select name="motivo" id="motivo" class="form-control">
                   <option value="Ajuda Humanitária">Ajuda Humanitária </option>
                   <option value="Formação">Formação</option>
                   <option value="Formação Profissional">Formação Profissional </option>
@@ -115,7 +128,7 @@
         </div>
         
         <div class="card-footer">
-          <p class="text-muted">para mais informações conatcte: +244 949 143 902 | <br class="d-md-none">
+          <p class="text-muted">para mais informações contacte: +244 949 143 902 | <br class="d-md-none">
             <span class="text-success">Whatsapp: +244 952 494 542</span>
           </p>
         </div>

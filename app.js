@@ -1,16 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const morgan = require('morgan')
 
 // const session = require('express-session')
 // const connect = require('connect-flash')
 
-
 const app = express()
-const server = require('http').createServer(app)
-const io = require('socket.io')(server)
-
-const morgan = require('morgan')
-
 
 app.set('views', __dirname + '/app/views')
 app.set('view engine', 'ejs')
@@ -22,20 +17,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/app/public'))
 app.use(morgan("dev"))
-
-// const mensagens = []
-
-// io.on('connection', socket => {
-//   console.log('Usuário Conectado: ' + socket.id)
-
-//   socket.emit('previusMessage', mensagens)
-
-//   socket.on('sendMessage', data => {
-//     mensagens.push(data)
-
-//     socket.broadcast.emit('recivedMessage', data)
-//   })
-// })
 
 require('./app/routes/index')(app)
 
