@@ -21,16 +21,15 @@ const dbc = {
 router.get('/', async (req,res) => {
   try {
     
-    // const service = await api.get('service').then(res => {
-    //   return res.data
-    // }).catch(err => {
-    //   return err.response.data
-    // })
-
-    const servicos = await jsonCRUD.JSONRead(dbc.path, dbc.encoding).then(res => {
-      return res
+    const servicos = await api.get('Rservice').then(res => {
+      return res.data
+    }).catch(err => {
+      return err.response.data
     })
-    
+
+    // const servicos = await jsonCRUD.JSONRead(dbc.path, dbc.encoding).then(res => {
+    //   return res
+    // })
 
     let subservicos = ''
     let posts = ''
@@ -60,17 +59,17 @@ router.get('/', async (req,res) => {
 
 router.get('/service/:servicoId', async (req, res) => { 
   try {
-    const servicos = await jsonCRUD.JSONRead(dbc.path, dbc.encoding).then(res => {
-      return res
+    const id = req.params.servicoId 
+    
+    const servico = await api.get('Rservice/' + id).then(res => {
+      return res.data
+    }).catch(err => {
+      return err.response.data
     })
     
-    if (!servicos) {
+    if (!servico) {
       res.status(404).send({Erro: 'Serviço não encontrado!'})
     }
-
-    const id = req.params.servicoId * 1
-  
-    const servico = servicos.find( s => s.id == id)
 
     var clientNovo = null
   

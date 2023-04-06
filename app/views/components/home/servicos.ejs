@@ -18,8 +18,8 @@
     <% servicos.forEach(servico => { %>
     <div class="card">
       
-      <% if(servico.imagem){ %>
-        <img class="card-img-top img-fluid" src="/img/services/<%=servico.imagem%>" alt="<%=servico.name %>">
+      <% if(servico.image){ %>
+        <img class="card-img-top img-fluid" src="<%=servico.image%>" alt="<%=servico.name %>">
       <% } else{ %>    
         <img class="card-img-top" src="/img/Slid/image_downloader_1661001390616.jpg" alt="Turismo">
       <% } %>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="card-actions">
-            <a href="./service/<%=servico.id%>" class="btn btn-primary d-block">Ver Mais</a>
+            <a href="./service/<%=servico._id%>" class="btn btn-primary d-block">Ver Mais</a>
         </div>
       </div>
         
