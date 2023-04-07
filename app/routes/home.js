@@ -24,7 +24,8 @@ router.get('/', async (req,res) => {
     const servicos = await api.get('Rservice').then(res => {
       return res.data
     }).catch(err => {
-      return err.response.data
+      console.log(err)
+      return []
     })
 
     // const servicos = await jsonCRUD.JSONRead(dbc.path, dbc.encoding).then(res => {
