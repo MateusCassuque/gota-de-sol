@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erro page</title>
+    <title>GOTA D' SOL - 404</title>
+
+    <!-- Link do icon -->
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    
+    <!--     
+    <!- CSS do Pagina ->
+    <link rel="stylesheet" href="/css/navstyle.css"> -->
+    
+    <!-- Css do Bootstrap -->
+    <link rel="stylesheet" href="/assets/dist/css/bootstrap.min.css">
+    
+    <!--link para O jquery da pagina-->
+    <script src="/assets/dist/jquery/dist/jquery.min.js"></script>
+    
+    <!--link para O javaScript bootstrap da pagina-->
+    <script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-    <p>página não encontrada!</p>
-    <h1>404</h1>
+
+    <%- include(`../pages/alert/${conteudo}`)%>
+
 </body>
 </html>
 

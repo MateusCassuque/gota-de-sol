@@ -14,14 +14,14 @@
     background-image: url("/img/fundos/fundoAmarelo.jpg");
     background-repeat: no-repeat;
     background-size: contain;
-    margin-bottom: 25px;
+    margin-bottom: auto;
 }
 
 /* h1 e a sigla */
 #benvindo #titulo{
     color: rgb(0, 162, 255);
     text-shadow: 1px 1px 5px rgb(0, 0, 0);
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-align: center;
 
 }
@@ -47,17 +47,43 @@
 
 @media(min-width: 768px){
     #benvindo{
-        height: 90vh;
+        height: 60vh;
         background-size: 100% 100%;
     }
 
     /* h1 e a sigla */
     #benvindo #titulo{
-        font-size: 10rem;
+        font-size: 5rem;
         
     }
     
     #benvindo #subtitulo{
         font-size: 35px;
     }
+}
+
+@media(max-width: 768px){
+    #benvindo{
+        height: 35vh;
+        background-size: 100% 100%;
+    }
+
+    /* h1 e a sigla */
+    #benvindo #titulo{
+        margin-top: -25px;
+        font-size: 2.5rem;
+        
+    }
+    
+    #benvindo #subtitulo{
+        font-size: 18px;
+    }
+
+    #benvindo #cta{
+        font-size: small;
+        background-color: blueviolet;
+        border-color: blueviolet;
+        margin-top: 0;
+    }
+    
 }

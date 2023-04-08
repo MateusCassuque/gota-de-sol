@@ -16,6 +16,19 @@ app.use(morgan("dev"))
 
 require('./app/routes/index')(app)
 
+app.get('*', async (req, res) => {
+  
+  const parametro = req.params
+  console.log(parametro)
+  
+  res.render('layout/erro', {
+    conteudo: 'noFound',
+    parametro
+  })
+
+
+})
+
 const port = process.env.PORT || 3003
 
 app.listen(port, (()=>{

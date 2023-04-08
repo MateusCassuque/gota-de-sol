@@ -3,24 +3,23 @@
    background-repeat: no-repeat;
    background-position: center;
    background-size: 100% 100%;
-   height: 400px;
+   height: 800px;
 
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-bottom: 30px;
+   margin: 10px auto;
 }
 
 #vaAgencia{
-    margin-left: 45px;
-    margin-top: 30px;
-    font-size: 30px;
+    margin: 45px auto;
+    font-size: 3.3rem;
     text-shadow: 0px 1px 0px #000000;
     color: blueviolet;
 }
 
 #p_fundo{
-    font-size: 24px;
+    font-size: 2rem;
     color: rgb(30, 148, 232);
     /* text-shadow: 0px 0px 1px #5b046c; */
     background-color: #ffe600d1;
@@ -33,15 +32,21 @@
 #p_cta{
     color: white;
     padding: 5px;
+    font-size: 1.5rem;
     text-align: center;
     width: 90%;
     background-color: #0a0a0ac1;
-    margin: 25px auto;
+    margin: 50px auto;
 }
 
 #p_botao{
+    margin-top: 30px;
     text-align: center;
     text-transform: uppercase;
+}
+
+#p_botao a{
+    font-size: large;
 }
 
 #p_botao a:hover{
@@ -52,35 +57,44 @@
 
 
 
-@media(min-width: 768px){
+@media(max-width: 768px){
     .img-fundo{
-        /* background-position-x: right;
-        background-position-y: 30px; */
-        background-size: contain;
-        height: 800px;
-        width: 80%;
-        margin: 0 auto;
+        /* background-position-x: right;*/
+        background-position-y: top; 
+        background-size: 100% 100%;
+        /* background-size: contain; */
+        height: 35vh;
+        width: 100%;
         /* background-color: #1ced00; */
         
         align-items: center;
         justify-content: center;
-        padding: 25px;
+        margin: 10px auto;
     }
     
     #p_cta{
-        width: 60%;
-        font-size: 25px;
+        width: 90%;
+        font-size: small;
+        margin: 10px auto;
+    
 
     }
     #p_botao{
-        margin-top: 50px;
+        margin: auto;
+        
     }
     #p_fundo{
-        width: 75%;
-        font-size: 30px;
+    margin: 20px auto;
+    font-size: .8rem;
     }
 
     #vaAgencia{
-        font-size: 75px;
+        font-size: 1.3rem;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    #btn_enviar{
+        font-size: small;
     }
 }
