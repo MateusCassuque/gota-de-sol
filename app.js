@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
@@ -18,6 +19,6 @@ require('./app/routes/index')(app)
 const port = process.env.PORT || 3003
 
 app.listen(port, (()=>{
-  console.log('SERVIDOR RONDANDO')
-  console.log('ACESSE EM: http://127.0.0.1:'+port)
+  console.log('\033[32mSERVIDOR RONDANDO\033[m')
+  console.log('\033[33mACESSE EM: http://127.0.0.1:'+port + '\033[m')
 }))

@@ -1,9 +1,7 @@
 const express = require('express')
 const router = express.Router();
 
-const { api, setBearerToken } = require('../../config/axiosConfig')
-
-const multerConfig = require('../../config/multerConfig')
+const { api } = require('../../config/axiosConfig')
 
 router.get('/', async (req,res) => {
   try {

@@ -1,90 +1,30 @@
 const express = require('express')
-const path = require('path')
-
 const { api } = require('../../config/axiosConfig')
+
 const router = express.Router()
 
-const jsonCRUD = require('../../config/jsonCRUD')
-
-const sf = {
-    pathU: path.resolve(__dirname, '..', '..', 'config', 'jsons', 'users.json' ),
-    pathS: path.resolve(__dirname, '..', '..', 'config', 'jsons', 'services.json' ),
-    pathP: path.resolve(__dirname, '..', '..', 'config', 'jsons', 'processes.json' ),
-    encoding: 'utf-8'
-}
-
-
-router.post('/', async (req, res) => {
-    try{
-      const servico = {...req.body}
-      const valor = servico.preco * 1
-      servico.preco = valor
-        
-      //Transformando as strings de microServicos e de requisitos rescebidas do req.body em array de strings
-      const reqArray = servico.requisitos.split(',')
-      servico.requisitos = reqArray
-      
-      const servArray = servico.microServicos.split(',')
-      servico.microServicos = servArray
-  
-      const newServico = await api.post('service', servico).then(res => {
-        return res.data 
-      })
-  
-      res.status(200).send(newServico)
-  
-    }catch(error){
-      res.status(400).send({error: 'Error to create service: ' + error})
+router.get('/:servicoId', async (req, res) => { 
+  try {
+    const id = req.params.servicoId 
+    
+    const servico = await api.get('Rservice/' + id).then(res => {
+      return res.data
+    }).catch(err => {
+      return err.response.data
+    })
+    
+    if (!servico) {
+      res.status(404).send({Erro: 'Serviço não encontrado!'})
     }
+
+    var clientNovo = null
+  
+    res.status(200).render('layout/home', {conteudo: 'service/index', servico, clientNovo })
+  } catch (error) {
+    res.status(400).send({
+      Error: 'Erro ao encontrar o serviço'
+    })
+  }
 })
-  
-
-router.get('/show/:serviceId', async (req, res) => {
-    try{
-        const servicos = await jsonCRUD.JSONRead(sf.pathS,sf.encoding).then(res => {
-            return res
-        })
-        const id = req.params.serviceId * 1
-        const servico = servicos.find( s => s.id == id)
-
-        if(!servico){
-            res.status(404).send({Erro: 'Service no Found!'})
-        }
-
-        const processos = await jsonCRUD.JSONRead(sf.pathP,sf.encoding).then(res => {
-            return res
-        })
-
-        const serviceProcessos = processos.filter(pro => pro.servico.id == id)
-        
-        res.status(200).render('layout/admin', {
-            conteudo: 'service/show',
-            servico,serviceProcessos
-        })
-    }catch(err){
-        res.status(400).send({
-            Erro: 'Erro ao buscar o serviço pelo Id.'
-        })
-    }
-})
-
-router.get('/delete/:processoId', async (req, res) => {
-    try {
-        const servicos = await jsonCRUD.JSONRead(sf.pathS,sf.encoding).then(res => {
-            return res
-        })
-    
-      const id = req.params.processoId * 1
-    
-      const novosServicos = servicos.filter(pro => pro.id != id)
-    
-      jsonCRUD.JSONWrite(sf.pathS, novosServicos, sf.encoding)
-  
-      res.status(200).redirect('/auth/dashboard')
-    } catch (error) {
-      res.status(400).send({Erro: error})
-    }
-  
-  })
 
 module.exports = app => app.use('/service', router)

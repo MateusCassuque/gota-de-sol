@@ -1,12 +1,8 @@
 const express = require('express')
-const path = require('path')
-const router = express.Router()
-
 const { api } = require('../../config/axiosConfig')
+// const mailer = require('../../modules/mailer')
 
-const Subprocesso =  require('../models/Subprocesso')
-
-const mailer = require('../../modules/mailer')
+const router = express.Router()
 
 router.post('/:servicoId', async (req, res) => {
     try {
@@ -51,31 +47,5 @@ router.post('/:servicoId', async (req, res) => {
         res.status(400).send(error)
     }
 })
-
-router.post('/sub/:servicoId', async (req, res) => {
-    try {
-
-        const subservicos = []
-
-        const client  = req.body
-
-        const id = req.params.servicoId * 1
-
-        var subServico = subservicos.find(sub => sub.id == id)
-
-        const subprocesso = new Subprocesso(client, subServico)
-
-        var clientNovo = client
-
-        res.status(200).render('layout/home', {
-            conteudo: 'subservico/index',    
-            subServico, clientNovo
-        })
-
-    } catch (error) {
-        res.status(400).send(error)
-    }
-})
-
 
 module.exports = app => app.use('/processo', router)

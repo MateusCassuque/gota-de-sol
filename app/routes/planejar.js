@@ -1,9 +1,7 @@
 const express = require('express')
+const { api } = require('../../config/axiosConfig')
+
 const router = express.Router();
-
-const { api, setBearerToken } = require('../../config/axiosConfig')
-
-const multerConfig = require('../../config/multerConfig');
 
 router.get('/planejar', async (req,res) => {
   try {
