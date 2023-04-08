@@ -19,7 +19,6 @@ require('./app/routes/index')(app)
 app.get('*', async (req, res) => {
   
   const parametro = req.params
-  console.log(parametro)
   
   res.render('layout/erro', {
     conteudo: 'noFound',
