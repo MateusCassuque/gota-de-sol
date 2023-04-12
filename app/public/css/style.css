@@ -38,24 +38,22 @@
     justify-content: center;
 
     /* Estilizando o fundo  */
-    background-image: url('/img/fundos/fundoBranco.jpg');
+    background-image: url('/img/fundos/aviao.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 
-#slidBanner #farst_P{
-    font-size: 16px;
+#slidBanner #textoSlid{
     padding: 10px;
     color: white;
+    text-transform: capitalize;
     text-shadow: 0px 0px 2px rgba(16, 16, 16, 0.58);
-    background-color: rgba(131, 131, 131, 0.52);
+    background-color: rgba(0, 0, 0, 0.629);
 }
-#slidBanner #secund_P{
-    font-size: 18px;
-    color: blueviolet;
-    text-shadow: 0px 0px 2px rgba(213, 213, 213, 0.693);
-    background-color: rgba(182, 182, 182, 0.52);
+
+#slidBanner #textoSlid p{
+    padding-top: 12px;
 }
 
 #servicos{
@@ -99,32 +97,16 @@
 
 /*Formatação única para os PCs*/
 @media(max-width: 768px){
-    #carouselExampleIndicators .carousel-item{ 
-        height: 850px;
-        position: relative;
-    }
-    
-    #carouselExampleIndicators .carousel-item img{
-        height: 100%;
-    }
-
-    #carouselExampleIndicators .carousel-item .legenda{
-        position: absolute;
-        top: 20%;
-        padding: 40px;
-        font-size: 65px;
-    }
-
-    #carouselExampleIndicators .carousel-item .legenda h2{
-        font-size: 100px;
-
-    }
-
     #slidBanner{
-        margin: 10px auto;
-        height: 40vh;
+        margin: 5px auto;
+        height: 60vh;
         width: 100%;
         text-transform: uppercase;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #servicos .card{
@@ -135,5 +117,16 @@
 
     #ofertaH3{
         font-size: small;
+    }
+
+
+
+    #slidBanner #textoSlid{
+        font-size: small;
+    }
+    
+    #slidBanner #textoSlid p{
+        width: 80%;
+        margin: 0 auto;
     }
 }

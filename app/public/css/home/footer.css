@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #e6450b; */
+}
+footer img {
+    padding: 25px;
+    margin: 10px;
+    width: 150px;
+    /* background-color: #e6db0b; */
+}
+
+footer .rodape1{
+    width: max-content;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* @media(min-width:770px){
+    .rodape1{
+    }
+} */
+

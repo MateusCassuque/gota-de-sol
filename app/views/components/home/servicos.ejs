@@ -7,9 +7,14 @@
 <body>
 
   <div id="slidBanner">
-    <p id="farst_P">Organizamos e Acompanhamos o teu processo desde o Agendamento a resposta do Consulado até o dezembarque de regreço.</p>
+    <div id="textoSlid">
+      <p>Organizamos e Acompanhamos o teu processo desde o Agendamento a resposta do Consulado até o dezembarque de regreço.</p>
+      <p> Uma boa organização do processo, não garante o visto mas, te coloca um passo na frente!</p>
 
-      <p id="secund_P"> Uma boa organização do processo, não garante o visto mas, te coloca um passo na frente!</p>
+      <p>Clica em <strong class="text-primary">Ver</strong> para ver os nosso Serviços e Productos</p>
+
+      <a href="#" id="cta_ver" class="mt-4 btn btn-primary w-50">Ver</a>
+    </div>
   </div>
 
   <h3 id="ofertaH3" class="m-4">Vistos Disponíveis</h3>
@@ -18,19 +23,28 @@
     <% servicos.forEach(servico => { %>
     <div class="card">
       
-      <% if(servico.image){ %>
-        <img class="card-img-top img-fluid" src="<%=servico.image%>" alt="<%=servico.name %>">
+      <% if(servico.name == 'Visto de Turismo'){ %>
+        <img class="card-img-top img-fluid" src="/img/services/turismo.jpg" alt="<%=servico.name %>">
+      <% } else if(servico.name == 'Visto de Saúde'){ %>
+        <img class="card-img-top img-fluid" src="/img/services/saude.jpg" alt="<%=servico.name %>">
+      <% } else if(servico.name == 'Visto de Visita Familiar'){ %>
+        <img class="card-img-top img-fluid" src="/img/services/visita_familiar.jpg" alt="<%=servico.name %>">
+      <% } else if(servico.name == 'Visto de Formação'){ %>
+        <img class="card-img-top img-fluid" src="/img/services/formacao.jpg" alt="<%=servico.name %>">
+      <% } else if(servico.name == 'Visto de Trabalho'){ %>
+        <img class="card-img-top img-fluid" src="/img/services/trabalho.jpg" alt="<%=servico.name %>">
+      <% } else if(servico.name == 'Visto de Procura de Trabalho'){ %>
+        <img class="card-img-top img-fluid" src="/img/services/procuradetrabalho.png" alt="<%=servico.name %>">
       <% } else{ %>    
         <img class="card-img-top" src="/img/Slid/image_downloader_1661001390616.jpg" alt="Turismo">
-      <% } %>
-       
+      <% } %> 
+        
       <div class="card-body">
         <h5 class="card-title"> <%=servico.name %> </h5>
         <p class="text-muted"> (Paises: Portugal, França, Espanhã, EUA & Brazil) </p>
         
         <div class="card-text">
           
-
           <strong class="showServico">Cuidamos de:</strong>
           <p class="text-muted">
             <%const microServicos = servico.microServicos.toString() %>

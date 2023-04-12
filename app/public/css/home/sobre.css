@@ -1,6 +1,7 @@
 body{
     width: 80%;
     margin: 0 auto;
+    background-color: rgba(255, 238, 238, 0.747);
 }
 p{
     text-indent: 25px;
@@ -8,8 +9,9 @@ p{
 }
 
 #logoGotadesol{
-    width: 150px;
-    margin: 35px auto auto auto;
+    width: 200px;
+    position: relative;
+    left: 25%;   
 }
 
 #benvindo #subtitulo{
@@ -17,8 +19,144 @@ p{
     color: blueviolet;
     text-shadow: 0px 0px 1px rgb(0, 0, 0);
     font-size: 12px;
+    display: flex;
+}
+.legenda1{
+  margin-top: 20px; 
+  border-bottom: 2px solid #16a; 
+} 
+.services{
+    border-bottom: 2px solid #16a;
+    color: orangered;
+    margin-top: 15px;
+}
+    
+.Ip{
+    color: rgb(14, 18, 22);
+    position: relative;
+    left: 18%;
+    width: 400px;
+    border: #16a fixed 2px;
+    background-color: rgb(255, 136, 0);
+    background-size: contain;
+    width: 65%;
+    height: min-content; 
+}
+.img{
+    width: 300px;
+}
+.img2{
+    width: 300px;
+    position: relative;
+    left: 18%;
+    border-radius: 20%;
+    border:rgb(252, 143, 2) solid 2px;   
+}
+.img5{
+    width: 300px;
+    position: relative;
+    margin-top: 20px;
+    left: 15%; 
+    background-color: rgb(255, 136, 0);
+    border-radius: 10px; 
+}
+#slid1{
+    width: 150px;
+    height: 30px;
+    position: relative;
+    left: 30%;
+    background-color:rgb(252, 143, 2);
+}
+.lg{
+    position: relative;
+    top: 5px;
+}
+.btn-primary{
+    background-color:rgb(255, 106, 0);
+    border-color: orangered;
+    text-transform: uppercase;
+    margin-top: 10px;
 }
 
-#botao{
-    text-align: center;
+.btn-primary:hover{
+    background-color:rgb(255, 255, 255);
+    border-color: orangered;
+    color: orangered;
+    text-transform: uppercase;
+    margin-top: 10px;
 }
+
+.FF{
+    position: relative;
+    left: 29%;
+}
+.btn-primary{
+    position: relative;
+    top: 10px;
+}
+
+@media(min-width:770px){
+    body{
+        width: 940px;
+    }
+
+   #logoGotadesol{
+    position: relative;
+    left: 350px;
+    top: 10px;    
+   }
+   .Ip{
+    position: relative;
+    left: 280px;
+    top: 20px;
+    font-weight: 500;
+    font-size: x-large;
+    background-color:rgb(255, 136, 0);
+    width: 37%;
+    height: min-content;
+   }
+   .img2{
+    position: relative;
+    left: 100%;
+    clear: both;
+
+   }
+   .legenda{
+    position: relative;
+    top: 10px;
+   }
+   figure{
+        float: right;
+       background-color: rgb(255, 136, 0);
+       border-radius: 10px;
+   }
+   .legenda1{
+    margin-left: 5px;
+    border-bottom: 2px solid rgb(255, 136, 0);
+   }
+   p{
+    position: relative;
+    right: 20px;    
+   }
+
+   figcaption{
+    position: relative;
+    left: 20%;
+   }
+   .img5{
+    position: relative;
+    left: 1px;
+    
+   }
+   .btn-primary{
+    position: relative;
+    top: 10px;
+    left: 40%;
+   }
+}
+
+
+
+
+
+
