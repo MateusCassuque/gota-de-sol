@@ -1,32 +1,6 @@
-#carouselExampleIndicators .carousel-item{ 
-    height: 45%;
-    position: relative;
-}
-
-#carouselExampleIndicators .carousel-item .legenda{
-    position: absolute;
-    top: 20%;
-
-    /* color: #FFF; */
-    /* background-color: rgba(0, 0, 0, 0.297); */
-    
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 15px;
-    text-transform: capitalize;
-}
-
-/*Formatação do tamanho da fonte para os telefones!*/
-/* @media(max-width: 720px){
-    *{
-        font-size: 18px;
-    }
- } */
-/*  */
-
 #slidBanner{
-    height: 50vh;
+    width: 55%;
+    height: 60vh;
     margin: 25px auto;
     text-align: center;
     text-transform: capitalize;
