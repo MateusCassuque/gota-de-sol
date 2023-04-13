@@ -33,8 +33,16 @@ router.get('/', async (req,res) => {
 router.get('/sobre', async (req, res) => {
   try {
     res.status(200).render('layout/home', {conteudo: '/home/sobre'})    
-    
-    
+  } catch (error) {
+    res.status(400).res.send({
+      Error: 'Erro to access the service page'
+    })
+  }
+})
+
+router.get('/services', async (req, res) => {
+  try {
+    res.status(200).render('layout/home', {conteudo: '/home/processe'})    
   } catch (error) {
     res.status(400).res.send({
       Error: 'Erro to access the service page'
