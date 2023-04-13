@@ -25,7 +25,6 @@ app.get('*', async (req, res) => {
     parametro
   })
 
-
 })
 
 const port = process.env.PORT || 3003
