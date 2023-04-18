@@ -1,4 +1,4 @@
-
+<html>
 <head>
     <title>GOTA D' SOL - ACOMPANHÃ</title>
     <link rel="stylesheet" href="/css/home/seguir.css">
@@ -9,99 +9,58 @@
         <form action="#" method="get" id="buscar" class=" mb-4">
             <div class="form-group row col-12">
                 <label for="processoId" class="mt-4">Nº do Processo</label>
-                <input type="search" name="processoId" id="processoId" class=" form-control" placeholder="exe.: 6437eea2a6bb3d5c00735197">
+                <input type="search" required name="processoId" id="processoId" class=" form-control" placeholder="exe.: 6437eea2a6bb3d5c00735197">
                 
                 <!-- Button trigger modal -->
-                <button type="submit" id="enviar" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#confirmacao">Buscar</button>
+                <button type="submit" id="enviar" class="btn btn-primary mt-4">Buscar</button>
             </div>
         </form>
-    </div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="confirmacao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmacaoLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmacaoLabel">ACOMPANHÃR PROCESSO</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row col-12">
-                        <div class="card col-12 mx-auto my-4" id="card">
-                            
-                            <div class="card-header">
-                                <h3 class="card-title" id="titulo"></h3>
-                                <p class="card-subtitle text-muted campo" id="subtitulo"></p>
-                            </div>
-                            
-                            <img class="card-img-top img-fluid" id="img-fluid" src="/favicon.png">
-                            
-                            <div class="card-body">                  
-                                <br>
-                                
-                                <div class="card-header header-client">
-                                    <h5><span id="nameVal"></span></h5>
-                                    <p class="card-subtitle text-muted">
-                                        Telefone: <span id="telefoneVal"></span>
-                                    </p>
-                                    
-                                    <p class="card-subtitle text-muted">
-                                        Email: <span id="emailVal"></span>
-                                    </p>
-                                </div>
-                                
-                                <br>
-                                
-                                <p class="campo">
-                                    estado:
-                                    <span class="valor" id="estadoVal"></span>
-                                </p>
-                                
-                            </div>
-                        
-                            <div class="card-footer" id="footer-card">
-                                <p class="text-muted">para mais informações conatcte: +244 949 143 902 | <br class="d-md-none">
-                                    <span class="text-success">Whatsapp: +244 952 494 542</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">voltar</button>
-                </div>
-            </div>
-        </div>
+
+        <table class="table table-hover" id="tabela"></table>
+        
     </div>
     
     <script type="text/javascript">
-        $('#buscar').submit(function(event) {
+        async function busca_dados(id) {
+            const processo = await $.get('/processo/' + id).then(res => {
+                return res
+            }).catch(err => {
+                return ''
+            })
+
+            return processo
+        }
+        
+        $('#buscar').submit(async function(event) {
             event.preventDefault()
-            
-            const titulo = $('#titulo').val()
-            const subtitulo = $('#subtitulo').val()
-            const nameVal = $('#nameVal').val()
-            const telefoneVal = $('#telefoneVal').val()
-            const emailVal = $('#emailVal').val()
-            const estadoVal = $('#estadoVal').val()
 
+            const container = document.querySelector('#container')
+            const tabela = document.querySelector('#tabela')
             const id = $('#processoId').val()
-            // alert(id)
+            const processo = await busca_dados(id)
 
-            console.log($('#titulo').val())
 
-            const processo = $.post('/processo/' + id).then(res => { return res})
+
+           tabela.remove()
 
             if(processo){
-
+                if(processo.name){
+                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Processo</th><th scope="col">Estado</th></tr></thead><tbody><tr><th scope="row">${processo._id}</th><th scope="row">${processo.name} ${processo.apelido}</th><th scope="row">${processo.service.name}</th><th scope="row">${processo.disponivel}</th></tr></tbody></table>`
+                    
+                    container.insertAdjacentHTML("beforeend", tabela_data)
+                }else{
+                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Motivo</th><th scope="col">Para</th><th scope="col">Estado</th></tr></thead><tbody><tr><th scope="row">${processo._id}</th><th scope="row">${processo.nome_completo}</th><th scope="row">${processo.motivo}</th><th scope="row">${processo.para}</th><th scope="row">${processo.disponivel}</th></tr></tbody></table>`
+                    
+                    container.insertAdjacentHTML("beforeend", tabela_data)
+                }
                 
+            }else{
+                container.insertAdjacentHTML("beforeend", `<h6 id="tabela">Processo não encontrado</h6>`)
             }
 
-            // const pedido = $.post('/pedido/' + id).then(res => { return res})
-            // const planejar = $.post('/planejar/' + id).then(res => { return res})
+
         })
         
     </script>
 </body>
+</html>

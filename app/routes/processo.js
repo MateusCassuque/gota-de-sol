@@ -48,4 +48,43 @@ router.post('/:servicoId', async (req, res) => {
     }
 })
 
+router.get('/:servicoId', async (req, res) => {
+    try {
+        const id = req.params.servicoId
+
+        let busca = await api.get('processo/' + id).then(res => {
+            return res.data
+        }).catch( async err => {
+            return ''             
+        })
+
+        if(!busca){
+            busca = await api.get('planejar/' + id).then(res => {
+                return res.data
+            }).catch(async err => {
+                return '' 
+            })
+        }
+
+        if(!busca){
+            busca = await api.get('pedido/' + id).then(res => {
+                return res.data
+            }).catch(async err => {
+                return '' 
+            })
+        }
+
+        const processo = busca
+
+        if(!processo){
+            return res.status(404).send('Process not find')
+        }
+
+        return res.status(200).send(processo)
+
+    } catch (error) {
+        return res.status(400).send(error)
+    }
+})
+
 module.exports = app => app.use('/processo', router)
