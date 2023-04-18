@@ -3,7 +3,7 @@ const { api } = require('../../config/axiosConfig')
 
 const router = express.Router();
 
-router.get('/planejar', async (req,res) => {
+router.get('/', async (req,res) => {
   try {
     const novoPedido = ''
     let message = ''
@@ -20,7 +20,7 @@ router.get('/planejar', async (req,res) => {
   }
 })
 
-router.post('/planejar', async (req,res) => {
+router.post('/', async (req,res) => {
   try {
     const {nome_completo, telefone} = req.body
     let message = ''
@@ -69,4 +69,4 @@ router.post('/planejar', async (req,res) => {
   }
 }) 
 
-module.exports = app => app.use('/pedido', router); 
+module.exports = app => app.use('/planejar', router); 

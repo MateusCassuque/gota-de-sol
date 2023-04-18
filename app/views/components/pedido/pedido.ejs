@@ -1,5 +1,5 @@
 <head>
-    <!-- <title>Document</title> -->
+    <title>Formulário de Pedido de Consultória</title>
     <link rel="stylesheet" href="/css/pedido/planejar.css">
 </head>
 <body>
@@ -16,6 +16,10 @@
     <p class="alert alert-danger" role="alert" id="sucesso"><%=message%></p>
   <% } %>
 
+  <% if(tipo){ %>
+    <input type="text" name="tipo" id="tipo" class="form-control d-none" value="<%=tipo%>">
+  <% } %>
+
   <div id="conteudo_planejar">
     
     <div class="card col-md-5 m-2 mx-auto" id="card-form">
@@ -29,7 +33,7 @@
       <p class="alert alert-info" role="alert" id="v_aviso">Preencha o formulário para enviar Enviar Pedido de Consultória</p>
       
       <div class="card-body">
-        <form action="#" method="post">
+        <form action="/pedido" method="post">
           <div class="row">
             
               <div class="col-12 form-group mb-4">
@@ -57,29 +61,20 @@
                 </div>
               </div>
 
-              <div id="motivo" class="row mt-4">
+              <div id="divMotivo" class="row mt-4">
                 <div class="form-group opsao namePreco col-6">
                   <label for="motivo">Motivo:</label>
                   <select name="motivo" id="motivo" class="form-control">
                     <option value="Agendamento">Agendamento</option>
                     <option value="Bilhete de Passagem">Bilhete de Passagem</option>
                     <option value="Documentação">Documentação</option>
-                    <option value="Reserva de Hotal">Reserva de Hotal</option>
-                    <option value="Visto">Visto </option>
+                   <option value="Reserva de Hotal">Reserva de Hotal</option>
                   </select>
                 </div>
-
                 <div class="form-group opsao namePreco col-6">
                   <label for="para">Para:</label>
                   <select name="para" id="para" class="form-control">
-                    <option value="Angola">Angola</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Dubai">Dubai</option>
-                    <option value="Espanhã">Espanhã</option>
-                    <option value="Estados Unidos de América">Estados Unidos de América</option>
-                    <option value="França">França</option>
-                    <option value="Portugal" selected>Portugal</option>
-                    <option value="Turquia">Turquia</option>
+                    
                   </select>
                 </div>
 
@@ -99,5 +94,59 @@
       </div>
     </div>
 
+    <script type="text/javascript">
+      const tipo = $('#tipo').val()
+      const motivo = document.querySelector('#motivo')
+
+      const paises = '<option value="Angola">Angola</option><option value="Brazil">Brazil</option><option value="Dubai">Dubai</option><option value="Espanhã">Espanhã</option><option value="Estados Unidos de América">Estados Unidos de América</option><option value="França">França</option><option value="Holanda">Holanda</option><option value="Portugal" selected>Portugal</option><option value="Turquia">Turquia</option>'
+
+      const reservas = '<option value="Bilhete de Passagem">Bilhete de Passagem</option><option value="Reserva de Hotal">Reserva de Hotal</option>'
+
+      const documentos = '<option value="Segura de Viagem">Segura de Viagem</option><option value="Reconhecer Certificado">Reconhecer Certificado</option>'
+
+      if(tipo){motivo.setAttribute('disabled', true)}else{
+        para.innerHTML = paises
+        selecao()
+      }
+        
+      if(tipo == 'agendamento'){
+        $('#datalhes').attr('placeholder','Insira o número do Passaport aqui.')
+        
+        motivo.selectedIndex = 0
+        para.innerHTML = paises
+      }else if(tipo == 'reservas'){
+        $('#datalhes').attr('placeholder',        
+        'Insira os dados da viagem aqui.\nNúmero do Passaport. \nData de Ida e Regresso.')
+        
+        motivo.innerHTML = reservas
+        para.innerHTML = paises
+        motivo.selectedIndex = 1
+        motivo.removeAttribute('disabled')
+      }else if(tipo == 'documentos'){
+        $('#datalhes').attr('placeholder','Insira o tipo de documento.')
+        
+        para.innerHTML = documentos
+        motivo.selectedIndex = 2
+      }
+      
+      function selecao(){
+        motivo.addEventListener('change', function(e){
+          if(motivo.selectedIndex == 0){
+            para.innerHTML = paises
+          }else if(motivo.selectedIndex == 1){
+            para.innerHTML = paises
+          }else if(motivo.selectedIndex == 2){
+            para.innerHTML = documentos
+          }else if(motivo.selectedIndex == 3){
+            para.innerHTML = paises
+          }else{
+            para.innerHTML = paises
+          }
+        })
+      }
+      
+    </script>
+
 </body>
   
+

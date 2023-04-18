@@ -40,7 +40,7 @@ router.get('/sobre', async (req, res) => {
   }
 })
 
-router.get('/services', async (req, res) => {
+router.get('/acompanhar', async (req, res) => {
   try {
     res.status(200).render('layout/home', {conteudo: '/home/processe'})    
   } catch (error) {
