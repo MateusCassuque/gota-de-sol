@@ -39,17 +39,19 @@
             const id = $('#processoId').val()
             const processo = await busca_dados(id)
 
-
-
            tabela.remove()
 
             if(processo){
+                let estado = ''
+
+                if(processo.disponivel){estado = 'Activo'}else{estado = 'Terminado'}
+
                 if(processo.name){
-                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Processo</th><th scope="col">Estado</th></tr></thead><tbody><tr><th scope="row">${processo._id}</th><th scope="row">${processo.name} ${processo.apelido}</th><th scope="row">${processo.service.name}</th><th scope="row">${processo.disponivel}</th></tr></tbody></table>`
+                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Processo</th><th scope="col">Estado</th></tr></thead><tbody id="tcorpo"><tr><th scope="row">${processo._id}</th><th scope="row">${processo.name} ${processo.apelido}</th><th scope="row">${processo.service.name}</th><th scope="row">${estado}</th></tr></tbody></table>`
                     
                     container.insertAdjacentHTML("beforeend", tabela_data)
                 }else{
-                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Motivo</th><th scope="col">Para</th><th scope="col">Estado</th></tr></thead><tbody><tr><th scope="row">${processo._id}</th><th scope="row">${processo.nome_completo}</th><th scope="row">${processo.motivo}</th><th scope="row">${processo.para}</th><th scope="row">${processo.disponivel}</th></tr></tbody></table>`
+                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Motivo</th><th scope="col">Para</th><th scope="col">Estado</th></tr></thead><tbody id="tcorpo"><tr><th scope="row">${processo._id}</th><th scope="row">${processo.nome_completo}</th><th scope="row">${processo.motivo}</th><th scope="row">${processo.para}</th><th scope="row">${estado}</th></tr></tbody></table>`
                     
                     container.insertAdjacentHTML("beforeend", tabela_data)
                 }
@@ -57,8 +59,6 @@
             }else{
                 container.insertAdjacentHTML("beforeend", `<h6 id="tabela">Processo não encontrado</h6>`)
             }
-
-
         })
         
     </script>

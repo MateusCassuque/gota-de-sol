@@ -9,6 +9,13 @@
 
 @media(max-width: 720px) {
     #container{
-        font-size: small;
+        font-size: 14px;
+    }
+
+    .table{
+        font-size: 9px;
+    }
+    #tcorpo th{
+        color: rgb(55, 86, 1);
     }
 }
