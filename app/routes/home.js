@@ -50,4 +50,14 @@ router.get('/acompanhar', async (req, res) => {
   }
 })
 
+router.get('/ver', async (req, res) => {
+  try {
+    res.status(200).render('layout/home', {conteudo: '/home/ver'})    
+  } catch (error) {
+    res.status(400).res.send({
+      Error: 'Erro to access the service page'
+    })
+  }
+})
+
 module.exports = app => app.use('/', router); 

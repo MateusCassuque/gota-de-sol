@@ -34,6 +34,10 @@
         $('#buscar').submit(async function(event) {
             event.preventDefault()
 
+            let nps = document.querySelector('#nps')
+
+            if(nps) nps.remove()
+
             const container = document.querySelector('#container')
             const tabela = document.querySelector('#tabela')
             const id = $('#processoId').val()
@@ -47,11 +51,11 @@
                 if(processo.disponivel){estado = 'Activo'}else{estado = 'Terminado'}
 
                 if(processo.name){
-                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Processo</th><th scope="col">Estado</th></tr></thead><tbody id="tcorpo"><tr><th scope="row">${processo._id}</th><th scope="row">${processo.name} ${processo.apelido}</th><th scope="row">${processo.service.name}</th><th scope="row">${estado}</th></tr></tbody></table>`
+                    const tabela_data = `<h6 id=nps> NPS: ${processo._id} </h6><table class="table table-hover" id="tabela"><thead><tr><th scope="col">Nome</th><th scope="col">Processo</th><th scope="col">Estado</th></tr></thead><tbody id="tcorpo"><tr><th scope="row">${processo.name} ${processo.apelido}</th><th scope="row">${processo.service.name}</th><th scope="row">${estado}</th></tr></tbody></table>`
                     
                     container.insertAdjacentHTML("beforeend", tabela_data)
                 }else{
-                    const tabela_data = `<table class="table table-hover" id="tabela"><thead><tr><th scope="col">Cod. Processo</th><th scope="col">Cliente</th><th scope="col">Motivo</th><th scope="col">Para</th><th scope="col">Estado</th></tr></thead><tbody id="tcorpo"><tr><th scope="row">${processo._id}</th><th scope="row">${processo.nome_completo}</th><th scope="row">${processo.motivo}</th><th scope="row">${processo.para}</th><th scope="row">${estado}</th></tr></tbody></table>`
+                    const tabela_data = `<h6 id=nps> NPS: ${processo._id} </h6><table class="table table-hover" id="tabela"><thead><tr><th scope="col">Nome</th><th scope="col">Motivo</th><th scope="col">Para</th><th scope="col">Estado</th></tr></thead><tbody id="tcorpo"><tr><th scope="row">${processo.nome_completo}</th><th scope="row">${processo.motivo}</th><th scope="row">${processo.para}</th><th scope="row">${estado}</th></tr></tbody></table>`
                     
                     container.insertAdjacentHTML("beforeend", tabela_data)
                 }
